@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 이롬 최종</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            width: 100%;
+        }
+        html, body{ overflow-x:hidden; }
+
+        section{
+            width: 100%;
+            height: auto;
+            
+        }
+        nav{
+            width: 100%;
+            height: 100px;
+            /* background-color: rgb(218, 90, 90); */
+        }
+
+        .navMenu{
+            display:flex ;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 15px;
+        }
+
+
+        .logo{
+            position: relative;
+            left: -10%;
+            
+        }
+
+        .rightLogo{
+            position: relative;
+            left: 10%;
+            display: flex;
+            gap: 20px;
+        }
+
+        .imgBox{
+            
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .img {
+            flex: 0 0 100%;        
+            background-position: center; 
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-size: cover;
+            position: relative;
+        }
+
+            .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out; /* 부드럽게 이동 */
+            
+            }
+
+            .slides .img {
+            min-width: 100%; /* 슬라이드 하나가 화면 꽉 차게 */
+            /* background-repeat: no-repeat; */
+            }
+
+
+
+        .img1{ background-image: url(./img/img/section_main1.png)}
+        .img2{ background-image: url(./img/img/section_main2.png)}
+        .img3{ background-image: url(./img/img/section_main3.png)}
+        .img4{ background-image: url(./img/img/section_main4.png)}
+        .img5{ background-image: url(./img/img/section_main5.png)}
+        
+        /* 섹션1이미지를 감싸는 큰 박스 부모 */
+        .Box{
+            width: 100%;
+            height: 85vh;
+            background-color:white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* on 클래스 붙었을 때 효과 
+         window.onload 이벤트에서 불러오려고*/
+        .img1{
+                opacity: 0;
+                transform: scale(0.5);
+                transition: all 0.5s ease;
+        }
+
+        /* on 클래스 붙었을 때 효과 
+         window.onload 이벤트에서 불러오려고*/
+        .img1.on{
+                opacity: 1;
+                transform: scale(1);
+         }
+
+
+        
+        .img .text{
+            position: absolute;
+            left: 15%;
+        }
+
+            .img .text h3{
+                width: 20%;
+                height: 25px;
+                font-size: 17px;
+                background-color: rgb(14, 92, 14);
+                line-height: 25px;
+                text-align: center;
+                padding: 3px;
+                color: white;
+                border-radius: 5px;
+            }
+
+            .img .text h1{
+                font-size: 40px;
+                margin-bottom: 20px; /* 아래쪽 여백 추가 */
+                line-height: 1.4;   /* 줄 간격도 조금 넉넉하게 */
+            }
+
+            .img .text p{
+                width: 170px;
+                height: 45px;
+                padding: 5px;
+                background: linear-gradient(90deg, #204e43, #49c5c7);
+                text-align: center;
+                line-height: 45px;
+                border-radius: 30px;
+                color: white;
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+            .imgBox .arrowBox{
+                width: 200px;
+                height: 80px;
+                background-color: white;
+                position: absolute;
+                text-align: center;
+                top:90.2%; left: 70%;
+                line-height: 80px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 70px;
+                
+                
+            }
+
+            .titleText div{
+                font-size: 40px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 70px;
+                
+                
+            }
+
+
+            /* on 클래스 붙었을 때 효과주려고 */
+            .titleText{
+                width: 100%;
+                background-color:#fffcfc;
+                opacity: 0;
+                transform: scale(0.5);
+                transition: all 0.5s ease;
+                
+            }
+
+
+
+            /* on 클래스 붙었을 때 효과 
+            window.onload 이벤트에서 불러오려고*/
+            .titleText.on {
+                opacity: 1;
+                transform: scale(1);
+                }
+
+
+
+
+
+
+            .title {
+                position: relative;
+                font-size: 40px;
+                font-weight: bold;
+                z-index: 1;
+                padding-left: 50px;
+                display: block;
+                
+                
+            }
+
+            .title::before{
+                content: "";  /* 가상요소는 content 꼭 필요! */
+                position: absolute;
+                left: 30%;
+                /* 글자랑 겹치는 위치 조정 */
+                top: 35%;
+                width: 30px;
+                height: 30px;
+                background: rgb(105, 165, 81);
+                border-radius: 50%;
+                z-index: -1;  /* 글자 뒤로 보내기 */
+            }
+
+
+            .titleText .t1 , .t2{
+                    text-align: center;
+                    font-size: 20px;
+                    
+                
+            }
+
+            .titleText .t2{
+                font-weight: bold;
+
+            }
+
+
+
+
+
+
+            #sec2{
+                width: 100%;
+                height: auto;
+                /* background-color: #fffcfc; */
+            }
+
+
+
+            
+
+            .iconMenuBox .icon{
+                width: 100%;
+                height: 300px;
+                background-color: #fffcfc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                
+            }
+
+
+
+            .sec2Menu{
+                    display: flex;
+                    flex-direction: column;  /* 아이콘 위, 텍스트 아래 */
+                    align-items: center;
+                    gap: 30px;
+                    font-weight: bold;
+                    width: 200px;
+                    height: 150px;
+                    /* background-color: blueviolet; */
+                    font-size: 23px;
+                    color: #585656;
+                    border-right: 1px solid #eaeaea;
+                    padding: 30px;
+                    opacity: 0;
+                    transform: translateY(30px);
+                    transition: all 0.6s ease;  
+            }
+
+                    .sec2Menu.on21 {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+
+
+
+
+
+            .brandBox{
+                width:100%;
+                height: auto;
+                /* background-color: aquamarine; */
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                gap: 10px;
+                padding-bottom: 80px;
+                
+            }
+
+
+
+            .brandBox img{
+                width: 100%;
+                height: 20%;
+            }
+
+
+
+                .brandBox .leftText{
+                    width: 40%;
+                    height: 300px;
+                    /* background-color: pink; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap:150px;
+                    border-right: 1px dotted #ccc;
+                    margin-top: 50px;
+                }
+
+                .leftText .text {
+                    padding-left: 40px;
+                    
+                }
+
+
+                
+                .brandBox .rightText{
+                    width: 40%;
+                    height: 300px;
+                    /* background-color: rgb(178, 20, 46); */
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap:180px;
+                    margin-top: 50px;
+                    
+                }
+
+                .S2vew{
+                     margin-top: auto;   /* 항상 맨 아래 */
+                }
+
+
+                .S2vew p {
+                    font-size: 15px;
+                    color: #333;
+                    margin: 0;
+                }
+
+
+                    .brandBox .leftText .text,
+                    .brandBox .rightText .text {
+                            display: flex;
+                            flex-direction: column; 
+                            justify-content: space-between;
+                            height: 100%;  /* 부모 높이 다 쓰기 */
+                    }
+
+
+
+
+/* 
+                .textarr{
+                    font-size: 40px;
+                    position: absolute;
+                    top: 260px; left:0
+                    
+                } */
+
+
+
+
+                .eromLifeBox{
+                    width: 100%;
+                    height: 900px;
+                    display: flex;
+                    background-color: rgb(28, 79, 75);
+                }
+
+                .eromLifeBox .life-Left{
+                    width: 30%;
+                    height: 900px;
+                    /* background-color: gold; */
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding-left: 20%;
+                    
+                }
+
+                .life-Left h1{
+                    font-size: 60px;
+                    color: white;
+                }
+
+                .life-Left h2{
+                    color: rgba(255, 255, 255, 0.8);
+                    
+                }
+
+
+                .eromLifeBox .right-Left{
+                    width: 80%;
+                    height: 900px;
+                    /* background-color: orange; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    font-size: 25px;
+                    
+                    
+
+                }
+
+                .right-Left .lifeBox1 ,.lifeBox2, .lifeBox3{
+                    width: 60%;
+                    height: 150px;
+                    /* background-color: aqua; */
+                    border: 1px solid white;
+                    border-left: none;
+                    border-right: none;
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 30px;
+                    color: white;
+                    font-weight: bold;
+                    flex-direction: column;
+                    
+                    
+                    
+                
+                }
+
+                .right-Left .lifeBox2{
+                    border-top: none;
+                    border-bottom: none;
+                }
+
+
+
+
+            .life {
+                position: relative;
+                font-weight: bold;
+                z-index: 1;
+            }
+                
+            .life:before{
+                content: "";  /* 가상요소는 content 꼭 필요! */
+                position: absolute;
+                left: -5%;   /* 글자랑 겹치는 위치 조정 */
+                top: -5px;
+                width: 25px;
+                height: 25px;
+                background: rgb(105, 165, 81);
+                border-radius: 50%;
+                z-index: -1;  /* 글자 뒤로 보내기 */
+            }
+
+
+/* 청록색뉴스박스 하단 글씨박스 */
+
+                /* 흑백사진위 글씨 기능  */
+            .LifeBoxBT{
+                    width: 100%;
+                    height: 30vh;
+                    margin-top: 60px;
+                    padding-left: 10%;
+                    text-align: left;
+                    /* opacity: 0;
+                    transform: translateX(-50px); /* 왼쪽에서 자연스럽게 */
+                    /* transition: all 0.8s ease; */
+                }
+
+
+
+            .Lifetext {
+                position: relative;
+                font-weight: bold;
+                z-index: 1;
+                font-size: 35px; color: #646464;
+                opacity: 0;
+                transform: translateY(60px);
+                transition: all 1s ease;
+
+            }
+
+            .Lifetext::before{
+                content: "";  /* 가상요소는 content 꼭 필요! */
+                position: absolute;
+                right: 99%;   /* 글자랑 겹치는 위치 조정 */
+                top: -2px;
+                width: 30px;
+                height: 30px;
+                background: rgb(105, 165, 81);
+                border-radius: 50%;
+                z-index: -1;  /* 글자 뒤로 보내기 */
+            }
+
+            .Lifetext2 {
+                opacity: 0;
+                transform: translateY(60px);
+                transition: all 1s ease;
+                }
+
+
+                    .LifeBoxBT.on31 .Lifetext {
+                        opacity: 1;
+                        transform: translateY(0); /* 제자리로 이동 */
+                    }
+
+                    .LifeBoxBT.on31 .Lifetext2 {
+                        opacity: 1;
+                        transform: translateY(0); /* 제자리로 이동 */
+                    }
+
+
+
+
+
+
+            /* 섹션3 기능넣기 */
+            .brandBox .leftText, .brandBox .rightText{
+                    opacity: 0;
+                    transform: translateY(50px) scale(0.6);
+                    transition: all 0.6s ease;
+            }
+
+
+                .brandBox .leftText.on31,
+                .brandBox .rightText.on31{
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                }
+
+
+                /* 청록뉴스박스 기능넣기 */
+                .eromLifeBox .life-Left {
+                    opacity: 0;
+                    transform: translateX(-100px); /* 왼쪽으로 100px 밀려서 대기 */
+                    transition: all 0.8s ease;
+                }
+                .eromLifeBox .life-Left.on31 {
+                    opacity: 1;
+                    transform: translateX(0); /* 제자리로 이동 */
+                }
+
+                .eromLifeBox .right-Left {
+                opacity: 0;
+                transform: translateX(100px);
+                transition: all 0.8s ease;
+                }
+                .eromLifeBox .right-Left.on31 {
+                opacity: 1;
+                transform: translateX(0);
+                }
+
+
+
+
+        #sec4{
+            /* width: 100%; */
+            height: 70vh;
+            /* background-color: gold; */
+
+        }    
+
+
+        .S4imgBoxs{
+            width: 100%;
+            height: auto;
+            /* background-color: #8BC53F; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+
+
+        .S4text{
+            /* background-color: #8BC53F; */
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            
+            padding-left: 40px;
+            left: 40px;
+            bottom: 40px;
+        }
+
+        .se4inBox1{
+            position: relative;  
+            /* side-text부모 */
+            overflow: hidden;
+        }
+
+
+        .se4inBox1 .side-text{
+            position: absolute;
+            left: 20px;             /* 왼쪽 간격 */
+            top: 20%;               /* 세로 가운데 기준 */
+            transform: translateY(-50%) rotate(-90deg);  /* 요소를 시계 반대 방향으로 90도 회전. */
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        
+
+
+        footer {
+        width: 100%;
+        background-color: #000;  /* 전체 배경 검정 */
+        color: #f3eeee;
+        padding: 30px 0;
+        text-align: center;
+        }
+
+        .footTop {
+        margin-bottom: 20px;
+        font-size: 14px;
+        }
+
+        .footTextBox {
+        width: 60%;
+        margin: 0 auto;
+        font-size: 13px;
+        line-height: 1.8;
+        color: #ccc;
+        }
+
+        .topSC{
+            width: 100px;
+            height: 100px;
+            background-color: #8BC53F;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navMenu">
+            <div class="logo">
+                <img src="./img/img/logo_g.png" alt="로고"/>
+            </div>
+
+
+            <p>이롬그룹</p>
+            <p>사업분야</p>
+            <p>이롬</p>
+            <p>이롬헬스케어</p>
+            <p>뉴스&홍보</p>
+            <p>이롬人</p>
+
+            <div class="rightLogo">
+                <img src="./img/img/cir_kr.png" alt="국기로고"/>
+                <i class="ri-menu-line" style="font-size: 32px; color: #333;"></i>
+            </div>
+        </div>
+</nav>
+
+
+<!--  섹션1 -->
+    <section id="sec1">
+    <div class="Box">
+        <div class="imgBox">
+        
+<div class="slides">
+
+
+    <div class="img img1">
+        <div class="text"> 
+        <h3 style="width: 10%;">이롬</h3>
+        <br>
+        <h1>
+            먹거리에서 생활습관까지<br>
+            <span style="color: #8BC53F;">건강한 개인과 사회에 기여</span>
+            하겠습니다.
+        </h1>
+        <div>
+            이롬은 지나칠 수 있는 자연에서 인간에게 유익한 힘을 발견하는 지혜,<br>
+            과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다.
+        </div>
+        <br>
+        <p>자세히 보기</p>
+        </div>
+    </div>
+
+    <div class="img img2">
+        <div class="text"> 
+        <h3>이롬헬스케어</h3>
+        <br>
+        <h1>
+            삶의 가치를 전달할 수 있도록<br>
+            <span style="color: #8BC53F;">건강 라이프 스타일을 연구</span>
+            합니다.
+        </h1>
+        <div>
+            이롬헬스케어는 고객의 삶 속에 깊이 들어가 먹을거리를 시작으로<br>
+            생활전반의 라이프 스타일을 제공하여, 행복하고 건강한 삶을 선물하고 있습니다.
+        </div>
+        <br>
+        <p>자세히 보기</p>
+        </div>
+    </div>
+    <div class="img img3">
+        <div class="text"> 
+        <h3>사랑의병원</h3>
+        <br>
+        <h1 style="color: white;">
+            <span style="color:#8BC53F;">면역과 의학적 암예방</span>까지<br>
+            현진시스템을 운영하고 있습니다.
+        </h1>
+        <div style="color: white;">
+            이롬헬스케어는 고객의 삶 속에 깊이 들어가 먹을거리를 시작으로<br>
+            생활전반의 라이프 스타일을 제공하여, 행복하고 건강한 삶을 선물하고 있습니다.
+        </div>
+        <br>
+        <p>자세히 보기</p>
+        </div>
+    </div>
+    <div class="img img4">
+        <div class="text"> 
+        <h3>국제사랑의봉사단</h3>
+        <br>
+        <h1 style="color: white;">
+            <span style="color:#8BC53F;">'세계는 나의교실' , 최후의 혁명은 사랑'</span><br>
+            고통받는 이웃들을 섬기고 있습니다.
+        </h1>
+        <div style="color: white;">
+            국제사랑의봉사단은 전 세계의 고통받는 이웃들을 사랑으로 섬기고<br>
+            전인적 필요를 채워 주고자 전 세계 40여개국에서 활동하고 있습니다.
+        </div>
+        <br>
+        <p>자세히 보기</p>
+        </div>
+    </div>
+    <div class="img img5">
+        <div class="text"> 
+        <h3 style="width: 15%;">꿈의학교</h3>
+        <br>
+        <h1 style="color: white;">
+            <span style="color:#8BC53F;">"집을 팔아서 스승을 사라"</span><br>
+            아이들의 더큰 미래를 생각합니다.
+        </h1>
+        <div style="color: white;">
+            꿈의학교에서는 우리 아이들이 올바른 세계관과 비전,실력을 겸비하여<br>
+            언제 어디서나 마음껏 꿈을 펼치고 성장할 수 있도록 사랑으로 양육하고 있습니다.
+        </div>
+        <br>
+        <p>자세히 보기</p>
+        </div>
+    </div>
+
+    
+
+</div>
+
+        <!-- 좌우 버튼 -->
+        <div class="arrowBox">
+            <img src="./img/img/visual_prev.png" alt="이전"/>
+            <img src="./img/img/visual_next.png" alt="다음"/>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+    </section>  
+    
+    
+
+
+
+<!-- 섹션2 -->
+    <section id="sec2">
+        <div class="iconMenuBox">
+
+                <div class="titleText">
+                    
+                    <div class="title">위대함을 향한 이롬의 끊임없는 도전과 혁신</div>
+                    <p class="t1">끊임없는 도전과 혁신으로 최적화된 제품을 개발,유통하여</p>
+                    <p class="t2">건강한 개인과 건강한 사회에 기여하는 라이프케어 컴퍼니</p>
+                </div>
+
+
+
+
+
+            <div class="icon">
+
+                <div class=" sec2Menu">
+                    <img src="./img/img/section01_icon01.png" alt="BUSINESS" style="width: 60px; height: 60px;">
+                        <span>BUSINESS</span>
+                </div>
+
+                <div class=" sec2Menu">
+                    <img src="./img/img/section01_icon02.png" alt="GLOBAL"style="width: 60px; height: 60px;">
+                        <span>GLOBAL</span>
+                </div>
+
+                <div class=" sec2Menu">
+                    <img src="./img/img/section01_icon03.png" alt="BIO&MEDICAL"style="width: 60px; height: 60px;">
+                        <span>BIO&MEDICAL</span>
+                </div>
+
+                <div class=" sec2Menu">
+                    <img src="./img/img/section01_icon04.png" alt="HUMAN"style="width: 60px; height: 60px;">
+                        <span>HUMAN</span>
+                </div>
+                
+                <div class=" sec2Menu" style="border-right: none;">
+                    <img src="./img/img/section01_icon05.png" alt="EDUCATION"style="width: 60px; height: 60px;">
+                        <span>EDUCATION</span>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        <div class="brandBox">
+
+            <div class="leftText">
+
+                <div class="text">
+                <h3 style="color: #a19595;">e r o m</h3>
+                <h1 style="font-size: 35px; color: rgb(11, 91, 11);" >이롬</h1>
+                <p style="color: #333;">건강한 개인과 건강한 사회에 기여하는<br> 
+                    토탈 라이프케어 컴퍼니</p>
+                    <br>
+                    <div class="S2vew">
+                    <p style="font-size: 15px; color: #333;" >자세히 보기
+                        <!-- <div class="textarr">
+                            <i style="color: #8BC53F;" class="ri-arrow-right-circle-fill"></i>
+                        </div> -->
+                    </p>
+                    </div>
+                </div>
+
+                    <div class="leftimg">
+                        <img src="./img/img/section02_prd01.png" alt="leftimg"/>
+                    </div>
+            </div>
+
+
+            <div class="rightText">
+
+                    <div class="leftimg">
+                        <img src="./img/img/section02_prd02.png" alt="leftimg"/>
+                    </div>
+
+                <div class="text">  
+                <h3 style="color: #a19595;">e r o m H e a l t h c a r e</h3>
+                <h1 style="font-size: 35px; color: rgb(11, 91, 11);">이롬헬스케어</h1>
+                <p style="color: #333;">건강한 라이프스타일,<br>
+                    이룸헬스케어가 함께합니다
+                    <br>
+                    <div  class="S2vew">
+                    <p style=" font-size: 15px; color: #333;" >자세히 보기
+                        <!-- <div class="textarr">
+                        <i style="color: rgb(11, 91, 11);" class="ri-arrow-right-circle-fill"></i>
+                        </div> -->
+                    </p>
+                    </div>
+                </div>     
+                    
+            </div>
+
+
+        </div>
+
+    </section>  
+    
+    
+
+
+<!-- 섹션3 : 브랜드 소개 -->
+<section id="sec3">
+
+
+<!-- 청록색 뉴스 박스  -->
+            <div class="eromLifeBox">
+                <div class="life-Left">
+                    <h2 class="life" style="font-size: 40px;">life care company,<br>erom group</h2><br>
+                    
+                    <h1>NEWS</h1>
+                    <p style="margin-top: 40%;color: white;">VIEW MORE</p>
+                </div>
+
+                <div class="right-Left">
+                    <div class="lifeBox1">
+                        ㈜이롬, ‘미네랄워터 리프레쉬’ 2025 미스코리아 공식 후원<br>
+                        <p style="margin-top: 10px; color: #929090; font-size: 15px;">25.08.11</p>
+
+                    </div>
+
+                    <div class="lifeBox2">
+                        의왕시 첫 종합병원, 응급의료센터 포함한 스마트병원으로 조성<br>
+                        <p style="margin-top: 10px; color: #929090; font-size: 15px;">25.06.13</p>
+                        
+                    </div>
+
+                    <div class="lifeBox3">
+                        ㈜이롬, ‘미네랄워터 리프레쉬’로 2년 연속 OBS전국 배드민턴대회 공식 협찬<br>
+                        <p style="margin-top: 10px; color: #929090; font-size: 15px;">25.06.13</p>
+                        
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+                <div class="LifeBoxBT">
+                    <h1 class="Lifetext" >
+                    이롬그룹은 과학의 힘으로 자연을 담아<br>
+                    건강에 대한 새로운 해답을 제공해 나가겠습니다
+                    </h1>
+                    <br>
+                    <h1 class="Lifetext2" style="font-size: 50px;">erom Company About</h1>
+                </div>
+
+
+
+
+
+</section>
+
+
+
+<!-- 섹션4 -->
+<section id="sec4">
+
+        <div class="S4imgBoxs">
+            <div class="se4inBox1">
+                <span class="side-text">erom About</span>
+                <img src="./img/img/section04_img01.png" alt="이롬소개"/>
+                <div class="S4text">이롬그룹<br>소개</div>
+            </div>
+            <div class="se4inBox1">
+                <span class="side-text">Hwang, Seong Ju</span>
+                <img src="./img/img/section04_img02.png" alt="황성주"/>
+                <div class="S4text">황성주<br>박사</div>
+            </div>
+            <div class="se4inBox1">
+                <span class="side-text">Brand Identity</span>
+                <img src="./img/img/section04_img03.png" alt="아이덴티디"/>
+                <div class="S4text">브랜드<br>아이덴티디</div>
+            </div>
+            <div class="se4inBox1">
+                <span class="side-text">Contact US</span>
+                <img src="./img/img/section04_img04.png" alt="US" />
+                <div class="S4text">Contact<br>US</div>
+            </div>
+        </div>
+
+</section>
+
+
+
+
+<!-- 하단 푸터 -->
+    <footer>
+    <div class="footTop">
+        <p>개인정보처리방침　　이용약관</p>
+    </div>
+
+    <div class="footTextBox">
+        <p>ADDRESS: 서울특별시 강남구 역삼로 552 (대치동, KM빌딩) 4층, 5층</p>
+        <p>TEL: 032-583-0160　FAX: 032-583-0161</p>
+        <p>TEL: 080-345-1111</p>
+        <p>EMAIL: webmaster@erom.co.kr</p>
+        <p>copyright (c) erom GROUP all rights reserved.</p>
+
+
+    </div>
+
+</footer>
+
+
+
+
+<script>
+    
+
+let slides = document.querySelector(".slides");  
+let slideItems = document.querySelectorAll(".slides .img");
+let firstSlide = document.querySelector('.img1'); //첫번째 슬라이드 이미지
+
+
+let nowSlide = 0; 
+let slideCount = slideItems.length; 
+let slideWidth = 100; // 한 장 = 100%
+
+
+// 자동슬라이드 제어용 변수
+let timer;
+let restartTimer; // (재시작 타이머) ,화살표누르면 수동전환할수있게
+
+
+// 화살표 버튼 클릭 이벤트
+let prev = document.querySelector(".arrowBox img[alt='이전']");
+let next = document.querySelector(".arrowBox img[alt='다음']");
+
+
+        // 슬라이드 이동 함수
+        function moveToSlide(index) {
+        slides.style.transition = "transform 0.6s ease-in-out";
+        slides.style.transform = `translateX(-${index * slideWidth}%)`;
+        nowSlide = index;  // 현재 슬라이드 위치 기억하자,지금 내가 몇변째 슬라이드를 보고있는지 기록 . 다음이동을 기준으로 사용함
+        }
+
+        // 자동 슬라이드
+        function autoSlide() {
+            nowSlide = (nowSlide + 1) % slideCount;  // 마지막 다음 → 자동으로 0 됨
+            moveToSlide(nowSlide);
+        }
+
+        // 자동 슬라이드 켜기/끄기
+        function startSlide() {
+        timer = setInterval(autoSlide, 3000);
+        }
+        function stopSlide() {
+        clearInterval(timer);
+        }
+
+
+
+        prev.addEventListener("click", () => {
+        stopSlide();
+        clearTimeout(restartTimer);
+        nowSlide = (nowSlide - 1 + slideCount) % slideCount;
+        moveToSlide(nowSlide);
+        // restartTimer = setTimeout(startSlide, 5000);
+        });
+
+        next.addEventListener("click", () => {
+        stopSlide();
+        clearTimeout(restartTimer);
+        nowSlide = (nowSlide + 1) % slideCount;
+        moveToSlide(nowSlide);
+        // restartTimer = setTimeout(startSlide, 5000);
+        });
+
+
+
+
+window.onload = () => {
+    firstSlide.classList.add("on");
+    moveToSlide(0);  // 첫 슬라이드 위치 고정
+    startSlide();  // 자동 슬라이드 시작                  
+};
+
+
+
+//스크롤시작할거임
+
+let sec1 = document.getElementById("sec1")
+let sec2 = document.getElementById("sec2")
+let sec3 = document.getElementById("sec3")
+let sec4 = document.getElementById("sec4")
+
+let S2texts = document.querySelectorAll(".icon .sec2Menu")
+let brandTexts = document.querySelectorAll(".brandBox .leftText, .brandBox .rightText")
+let S3texts = document.querySelectorAll(".eromLifeBox .life-Left, .eromLifeBox .right-Left")
+let LifeBoxBT = document.querySelector(".LifeBoxBT");
+
+let titleText = document.querySelector(".titleText");  //위대함글씨쪽
+
+function startScroll(){
+    let sy = window.scrollY
+    let navH = 90
+    let s1 = sec1.offsetTop
+    let s2 = sec2.offsetTop
+    let s3 = sec3.offsetTop
+    let s4 = sec4.offsetTop
+
+    //  섹션 2 (아이콘 + 브랜드박스 같이)
+    if( sy >= s2 - 300 && sy <= s3 - navH){
+
+        titleText.classList.add("on")
+        // 아이콘
+        S2texts.forEach((text, idx) =>{
+            text.style.transitionDelay = ( idx * 0.2) + "s"; 
+            text.classList.add("on21");
+        })
+        // 브랜드박스
+        brandTexts.forEach((box, idx) =>{
+            box.style.transitionDelay = ( idx * 0.2) + "s"; 
+            box.classList.add("on31");
+        })
+    } else {
+
+        titleText.classList.remove("on")
+        S2texts.forEach(text =>{
+            text.style.transitionDelay = "0s";
+            text.classList.remove("on21");
+        })
+        brandTexts.forEach(box =>{
+            box.style.transitionDelay = "0s";
+            box.classList.remove("on31");
+        })
+    }
+
+    // 섹션 3 (청록색 뉴스박스)
+    if( sy >= s3 - 300 && sy <= s4 - navH){
+        S3texts.forEach((text, idx) =>{
+            text.style.transitionDelay = ( idx * 0.2) + "s";
+            text.classList.add("on31");
+        })
+    } else {
+        S3texts.forEach(text =>{
+            text.style.transitionDelay = "0s";
+            text.classList.remove("on31");
+        })
+    }
+
+    // LifeBoxBT (조금 더 아래에서 따로 등장)
+    if (sy >= s3 + 200 && sy <= s4 - navH) {
+        LifeBoxBT.classList.add("on31");
+    } else {
+        LifeBoxBT.classList.remove("on31");
+    }
+}
+
+startScroll()
+window.addEventListener("scroll", startScroll)
+
+</script>
+
+    
+</body>
+</html>

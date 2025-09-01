@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        document.write(today)
+        document.write(`년도 : ${today.getFullYear()}`)
+        document.write(`<br>월 : ${today.getMonth()+1}`) //월만 +1해줌 
+        document.write(`<br>일 : ${today.getDate()}`)
+        document.write(`<br>요일 : ${today.getDay()}`)
+        let day1 = ""
+        let yo = today.getDay()
+
+        switch(yo){
+            case 0 :
+                day1 ="일요일"
+                break
+
+            case 1 :
+                day1 = "월요일" 
+                break   
+
+            case 2 :
+                day1 = "화요일" 
+                break 
+
+            case 3 :
+                day1 = "수요일" 
+                break 
+
+            case 4 :    
+                day1 = "목요일" 
+                break 
+
+            case 5 :        
+                day1 = "금요일" 
+                break 
+
+            case 6 :
+                day1 = "토요일" 
+                break 
+        }
+        document.write(`<br>요일 : ${day1}`)
+
+        document.write(`<br>시간 : ${today.getHours()}`)
+        document.write(`<br>시간 : ${today.getMinutes()}`)
+        document.write(`<br>시간 : ${today.getSeconds()}`)
+
+        document.write(`<br>시간 : ${Date.now()}`)
+
+
+    </script>
+</body>
+</html>

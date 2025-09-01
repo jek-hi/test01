@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            background-color:rgba(30,30,30);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="btn">배경색 바꾸기</button>
+    <script>
+        let box= document.querySelector(".box")
+        let btn =document.getElementById("btn")
+
+
+        function randomcolor(){
+            let r = Math.floor(Math.random() * 128) + 128
+            let g = Math.floor(Math.random() * 128) + 128
+            let b = Math.floor(Math.random() * 128) + 128
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+
+        }
+
+        btn.addEventListener("click", function(){
+            box.style.backgroundColor = randomcolor()
+        })
+    </script>
+</body>
+</html>

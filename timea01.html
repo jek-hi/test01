@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // //방법1
+        // setInterval(function(){
+        //     document.write("ㅎㅇ")
+
+        // }, 1000)
+
+        // //방법2
+        // setInterval(()=>{
+        //     document.write("ㅎㅇ")
+        // } , 1000 )
+
+
+        // //방법3
+        // function hello(){
+        //     document.write("ㅎㅇ")
+        // }
+
+
+        // //방법4
+        // setInterval(hello,1000)
+
+
+
+       // setInterval(function(){
+            //반복하고자 하는 실행문
+        //}, 밀리 초 시간 )
+
+        //setInterval (자동실행)의 반대
+        //clearInterval 멈추는 것 
+
+        let hello = setInterval(()=>{
+            document.write("ㅎㅇ<br>")
+        }, 1000);
+
+
+        setTimeout(function(){
+            document.write("ㅎㅇ<br>")
+            clearInterval(hello)
+        },5000 )
+
+
+
+
+
+    </script>
+</body> 
+</html>

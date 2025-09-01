@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        body{
+            width: 100vw;
+        }
+
+        nav{
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            left: 0; top: 0;
+        }
+
+        section{
+            width: 100%;
+            height: calc(100ch - 50px);
+        }
+
+        .inBox{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .imgBox{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .imgBox .img{
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;  
+            /*  ↑ 내 부모안에서 내마음대로 움직일꺼야 */
+            left: 0; top: 0;
+            opacity: 0;
+            transition: all 1s linear;
+        }
+
+
+        .imgBox .img.on{
+            opacity: 1;
+            
+            /* 트랜지션을 쓸수 있게 만들수 있는것은  opacity , dispaly 는 트랜지션 안먹음*/
+        }
+
+        .imgBox .img1{background-image: url(./img/coffee\ .jpg);}
+        .imgBox .img2{background-image: url(./img/coffee2.jpg);}
+        .imgBox .img3{background-image: url(./img/coffee3.jpg);}
+
+
+
+        .texts{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0; top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            flex-direction: column;
+            z-index: 10;
+            opacity: 0;
+            transition: all 1s linear;
+        
+        }
+
+        .texts h1, .texts h3{
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s linear;
+        }
+
+            .texts.on{
+                opacity: 1;
+            }
+
+        .texts h1{font-size: 100px;}
+        .texts h3{font-size: 50px;}
+
+        .texts.on h1, .texts.on h3{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .texts.on h1{transition-delay: 0.2s; }
+        .texts.on h3{transition-delay: 0.5s; }
+
+        button{
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 3px solid black;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 100;
+        }
+
+        .rightBtn{
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%); 
+            /* 사진이 자연스럽게 사라지며 넘어감 */
+        }
+    </style>
+</head>
+<body>
+    <nav>여기는 네비</nav>
+    <section>
+        <div class="inBox">
+            
+            <div class="imgBox">
+                <div class="img img1 on"></div>
+                <div class="img img2">
+                    <div class="texts">
+                        <h1>하 이</h1>
+                        <h3>안 뇽 </h3>
+                    </div>
+                </div>
+                <div class="img img3">
+                    <div class="texts">
+                        <h1>하 이22</h1>
+                        <h3>안 뇽22 </h3>
+                    </div>
+                </div>
+            </div>
+            <button class="leftBtn" onclick="leftf()">&lt;</button>
+            <button class="rightBtn" onclick="rightf()">&gt;</button>
+        </div>
+    </section>
+
+    <script>
+
+        let imgs = document.querySelectorAll(".imgBox .img")
+        let count = 0
+        let tot = imgs.length
+        let texts =document.querySelectorAll(".texts")
+        
+        function leftf(){
+            count--;
+
+
+        }
+
+        function rightf(){
+            count++;
+
+            imgs.forEach((item)=>{
+                item.classList.remove("on")
+            })
+
+            texts.forEach((item)=>{
+                item.classList.remove("on")
+            })
+
+            if( count > tot-1 ){
+                count = 0;
+            }
+            
+            imgs[count].classList.add("on")
+            let tx= imgs[count].querySelector(".texts")
+            if (tx) {
+                tx.classList.add("on")
+            }
+        }
+
+    </script>
+</body>
+</html>
